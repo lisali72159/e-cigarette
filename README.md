@@ -21,9 +21,11 @@ MVPs
 * Displaying of e-cigarette use on available years (2016-2017)
 
 Wireframe
+
 https://wireframe.cc/fUvJOn
 
 Timeline
+
 Day 1: Setup webpack. Have an outline of how to approach each MVP item. Create a skeleton for the project. Familiarize myself with D3. Use CDC's API to extract specific data.
 
 Day 2: Have map display data when hovering over specific state. Create a table to display data. 
