@@ -1,0 +1,36 @@
+#us-map {
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+path:hover, circle:hover {
+  stroke: #f0c03d !important;
+  stroke-width:2px;
+  stroke-linejoin: round;
+  fill: #f0c03d !important;
+}
+
+.title{
+  color: red;
+}
+
+#info-box {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  background-color: #ffffff;
+  border: 2px solid #BF0A30;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: arial;
+}
+
+#info-box:hover {
+  display: block;
+}
