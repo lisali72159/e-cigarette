@@ -16,21 +16,7 @@ path:hover, circle:hover {
 
 .title{
   color: red;
+  text-align: center;
+  
 }
 
-#info-box {
-  display: none;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: 1;
-  background-color: #ffffff;
-  border: 2px solid #BF0A30;
-  border-radius: 5px;
-  padding: 5px;
-  font-family: arial;
-}
-
-#info-box:hover {
-  display: block;
-}

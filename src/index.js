@@ -47,7 +47,7 @@ const filtered = all_data.filter(function(item) {
 });
 
 
-var ecig_data = {};
+const ecig_data = {};
 filtered.forEach(function(item) {
   var state_abbreviation = item[9];
   var percentage = item[18];
@@ -63,5 +63,25 @@ filtered.forEach(function(item) {
 
 console.log(ecig_data);
 
-const map = document.getElementById("us-map");
+const all_states = document.getElementsByClassName("state");
+const map = Object.values(all_states[0].children);
+// debugger
+document.onmousemove = event => {
+  document.getElementById("info-box").style.left = event.pageX + 10 + "px";
+  document.getElementById("info-box").style.top = event.pageY - 35 + "px";
+};
+
+map.forEach(state => {
+  state.addEventListener("mouseover", e => {
+  // debugger
+  const id = e.currentTarget.id;
+  const state = e.currentTarget.getElementsByTagName("title")[0].innerHTML;
+  const percent = ecig_data[id][2016]["percentage"] + "%";
+  // debugger
+  const domEle = document.getElementById("info-box");
+  domEle.innerHTML = state + ": " + percent;
+  domEle.style.opacity = 1;
+  // debugger
+  }
+)});
 
