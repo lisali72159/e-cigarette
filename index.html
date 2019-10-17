@@ -14,13 +14,34 @@
 
 <div class="title"><h1>E-cigarette Usage in the United States</h1></div>
     <!-- <div id="app"></div> -->
+   
+    <div id="radio-container">
+        <label>Year</label>
+    <br>
+        <input id="2016" name="year" type="radio" value="year" checked="checked">
+        <label onclick="">2016</label>
+    <br>
+        <input id="2017" name="year" type="radio" value="year">
+        <label onclick="">2017</label>
+    </div>
     
     <div id="info-box"></div>
-    <button>2016</button>
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <div class="2016-legend-container">Legend</div>
+    <ul class="legend">
+        <li><span class="low"></span>1.1 - 4.0%</li>
+        <br>
+        <li><span class="intermediate"></span>4.1 - 4.7%</li>
+        <br>
+        <li><span class="high"></span>4.8 - 5.1%</li>
+        <br>
+        <li><span class="very-high"></span> > 5.2% </li>
+    </ul>
+
     <div id="us-map" preserveAspectRatio="xMinYMin meet">
-    <svg xmlns="http://www.w3.org/2000/svg" width="959" height="593">
-        <title>Blank US states map</title>
+    
+        <svg xmlns="http://www.w3.org/2000/svg" width="959" height="593">
+        
         <defs>
             <style type="text/css">
     
@@ -229,7 +250,7 @@
             <g id="DC">
                 <title>District of Columbia</title>
                 <path id="DC1" d="M801.8 253.8l-1.1-1.6-1-.8 1.1-1.6 2.2 1.5z" />
-                <circle id="DC2" stroke="#FFFFFF" stroke-width="1.5" cx="801.3" cy="251.8" r="5" opacity="1" />
+                <circle id="DC2" stroke="#FFFFFF" stroke-width="1.5" cx="801.3" cy="251.8" r="5" opacity="0" />
                 <!-- Set opacity to "0" to hide DC circle -->
             </g>
         </g>

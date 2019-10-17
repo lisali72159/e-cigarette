@@ -7,6 +7,22 @@
   cursor: pointer;
 }
 
+#radio-container{
+  border: black 2px solid;
+  display: block;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  border-radius: 20px;
+  margin: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+svg {
+  margin: 0 auto;
+}
+
 path:hover, circle:hover {
   stroke: #f0c03d !important;
   stroke-width:2px;
@@ -15,8 +31,32 @@ path:hover, circle:hover {
 }
 
 .title{
-  color: red;
+  color: blueviolet;
   text-align: center;
-  
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+#info-box {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  background-color: #ffffff;
+  border: 2px solid #BF0A30;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: arial;
+}
+
+path > title {
+  opacity: 0;
+}
+
+.legend { list-style: none; }
+.legend li { float: left; margin-right: 10px; }
+.legend span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 2px; }
+.low { background-color: #99ddff; }
+.intermediate { background-color: #2a91c2; }
+.high { background-color: #014f87; }
+.very-high { background-color: #12283c; }
 

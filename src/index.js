@@ -9,28 +9,37 @@ var svg = d3.select("body")
     .append("svg")
     .attr("width", width)
     .attr("height", height);
-
+let year= 2016;
 window.addEventListener('DOMContentLoaded', () => {
 document.getElementById('app');
-var state = d3.selectAll('path').attr('fill', function(d){
-//  debugger
-  var abbr = this.id;
-  // debugger
-  // console.log(this.id);
-  for (var key in ecig_data) {
+
+    var state = d3.selectAll('path').attr('fill', function(d){
     // debugger
-    var percent = ecig_data[key][2016]["percentage"];
-    if (key === abbr && percent <= 4.0 ){
-      // debugger
-      return "#99ddff";
-    } else if (key === abbr && (percent <= 4.7 && percent >= 4.1)) {
-      return "#2a91c2";
-    } else if (key === abbr && (percent >= 4.8 && percent <=5.1)) {
-      return "#014f87"
-    } else if (key === abbr && (percent >= 5.2)){
-      return "#12283c"
+    var abbr = this.id;
+    // debugger
+    for (var key in ecig_data) {
+      debugger
+      var percent = ecig_data[key][year]["percentage"];
+      if (key === abbr && percent <= 4.0){
+        // debugger
+        return "#99ddff";
+      } else if (key === abbr && (percent <= 4.7 && percent >= 4.1)) {
+        return "#2a91c2";
+      } else if (key === abbr && (percent >= 4.8 && percent <=5.1)) {
+        return "#014f87"
+      } else if (key === abbr && (percent >= 5.2)){
+        return "#12283c"
+      }
     }
-  }
+
+    document.getElementById("2016").addEventListener("click", () => {
+      year = 2016 })
+   
+    document.getElementById("2017").addEventListener("click", () => {
+      year = 2017 })
+    
+  
+
 });
 
 });
@@ -76,7 +85,7 @@ map.forEach(state => {
   // debugger
   const id = e.currentTarget.id;
   const state = e.currentTarget.getElementsByTagName("title")[0].innerHTML;
-  const percent = ecig_data[id][2016]["percentage"] + "%";
+  const percent = ecig_data[id][year]["percentage"] + "%";
   // debugger
   const domEle = document.getElementById("info-box");
   domEle.innerHTML = state + ": " + percent;
@@ -84,4 +93,12 @@ map.forEach(state => {
   // debugger
   }
 )});
+
+
+map.forEach(state => { 
+  state.addEventListener("mouseleave", e => {
+  document.getElementById("info-box").innerHTML = "";
+  document.getElementById("info-box").style.opacity = 0;
+  })
+});
 
