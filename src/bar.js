@@ -55,14 +55,17 @@ var dataset = [
 ];
 
 var svgWidth = 900,
-  svgHeight = 900,
+  svgHeight = 90,
   barPadding = 0;
 var barWidth = svgWidth / dataset.length;
 
-var svg = d3
-  .select("svg")
+var svg = d3.select("body")
+  .append("svg")
   .attr("width", svgWidth)
-  .attr("height", svgHeight);
+  .attr("height", svgHeight)
+  .attr("class", "bar-chart")
+
+// var g = svg.append("g");
 
 var barChart = svg
   .selectAll("rect")
