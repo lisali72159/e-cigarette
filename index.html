@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
     <script src="data/ecig.json"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="./dist/main.css"></link>
     <title>Tobacco Usage</title>
@@ -27,6 +28,7 @@
     
     <div id="info-box"></div>
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    
     <div class="2016-legend-container">Legend</div>
     <ul class="legend">
         <li><span class="low"></span>1.1 - 4.0%</li>
@@ -35,8 +37,21 @@
         <br>
         <li><span class="high"></span>4.8 - 5.1%</li>
         <br>
-        <li><span class="very-high"></span> > 5.2% </li>
+        <li><span class="very-high"></span> >= 5.2% </li>
     </ul>
+
+
+    <div class="2017-legend-container">Legend</div>
+    <ul class="legend">
+        <li><span class="low"></span>1.1 - 3.9%</li>
+        <br>
+        <li><span class="intermediate"></span>4.0 - 4.6%</li>
+        <br>
+        <li><span class="high"></span>4.7 - 4.9%</li>
+        <br>
+        <li><span class="very-high"></span> >= 5.0% </li>
+    </ul>
+
 
     <div id="us-map" preserveAspectRatio="xMinYMin meet">
     
@@ -258,5 +273,7 @@
     </svg>
     </div>
     <script src="./dist/main.js"></script>
+    <!-- <div id="bar-graph"></div> -->
+    
 </body>
 </html>

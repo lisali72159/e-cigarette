@@ -1,3 +1,7 @@
+html {
+  background-color: rgb(245, 224, 242);
+}
+
 #us-map {
   display: flex;
   top: 0;
@@ -30,11 +34,13 @@ path:hover, circle:hover {
   fill: #f0c03d !important;
 }
 
+
 .title{
   color: blueviolet;
   text-align: center;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 
 #info-box {
   position: absolute;
@@ -42,15 +48,15 @@ path:hover, circle:hover {
   left: 0px;
   z-index: 1;
   background-color: #ffffff;
-  border: 2px solid #BF0A30;
+  border: 2px solid black;
   border-radius: 5px;
   padding: 5px;
   font-family: arial;
-}
-
-path > title {
+  font-weight: bold;
   opacity: 0;
 }
+
+
 
 .legend { list-style: none; }
 .legend li { float: left; margin-right: 10px; }
@@ -59,4 +65,3 @@ path > title {
 .intermediate { background-color: #2a91c2; }
 .high { background-color: #014f87; }
 .very-high { background-color: #12283c; }
-
