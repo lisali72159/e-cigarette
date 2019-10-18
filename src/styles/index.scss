@@ -65,6 +65,8 @@ path:hover, circle:hover {
 .high { background-color: #014f87; }
 .very-high { background-color: #12283c; }
 
-#bar-chart {
-  background-color: red;
+.bar-chart {
+  background-color: pink;
+  margin: 40px;
+  display: flex;
 }
