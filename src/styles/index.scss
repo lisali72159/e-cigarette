@@ -1,6 +1,4 @@
-html {
-  background-color: rgb(245, 224, 242);
-}
+
 
 #us-map {
   display: flex;
@@ -54,6 +52,7 @@ path:hover, circle:hover {
   font-family: arial;
   font-weight: bold;
   opacity: 0;
+  font-size: 20px;
 }
 
 
@@ -65,3 +64,7 @@ path:hover, circle:hover {
 .intermediate { background-color: #2a91c2; }
 .high { background-color: #014f87; }
 .very-high { background-color: #12283c; }
+
+#bar-chart {
+  background-color: red;
+}
