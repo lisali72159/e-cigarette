@@ -67,7 +67,7 @@ var svg = d3
   .attr("width", svgWidth)
   .attr("height", svgHeight)
   .attr("class", "bar-chart")
-  .attr("fill", "steelblue")
+  .attr("fill", "#5c497f")
   // .attr("transform", "translate(50, 2)")
 
  
@@ -81,7 +81,7 @@ var yScale = d3
   .domain([0, d3.max(dataset)])
   .range([svgHeight, 0]);
 
-  debugger
+  // debugger
 var x_axis = d3.axisBottom().scale(xScale);
 
 var y_axis = d3.axisLeft().scale(yScale);
@@ -103,7 +103,7 @@ svg
          
 svg.append("text")
   .attr("transform",
-    "translate(" + 500 + " ," +
+    "translate(" + 700 + " ," +
     (595) + ")")
   .text("State");
 

@@ -12,6 +12,9 @@ var svg = d3.select("body")
     .attr("class", "map")
 
 let year= 2016;
+document.getElementById("legend-container-1").style.opacity = 1;
+document.getElementById("legend-container-2").style.opacity = 0;
+
 window.addEventListener('DOMContentLoaded', () => {
 document.getElementById('app');
 
@@ -42,10 +45,10 @@ document.getElementById('app');
         var abbr = this.id;
         // debugger
         for (var key in ecig_data) {
-          debugger;
+          // debugger;
           var percent = ecig_data[key][year]["percentage"];
           if (key === abbr && percent <= 4.0) {
-            debugger;
+            // debugger;
             return "#99ddff";
           } else if (key === abbr && (percent <= 4.7 && percent >= 4.1)) {
             return "#2a91c2";
@@ -80,6 +83,18 @@ document.getElementById('app');
         }
       });
     })
+
+  document.getElementById("2017").addEventListener("click", () => {
+    document.getElementById("legend-container-2").style.opacity = 1;
+    document.getElementById("legend-container-1").style.opacity = 0;
+
+  })
+
+  document.getElementById("2016").addEventListener("click", () => {
+    document.getElementById("legend-container-1").style.opacity = 1;
+    document.getElementById("legend-container-2").style.opacity = 0;
+
+  })
   });
 
 
@@ -139,7 +154,6 @@ age1.forEach(function(item) {
 });
 
 const bar_data = (Object.values(age_data));
-debugger
 // debugger
 console.log(bar_data)
 // debugger

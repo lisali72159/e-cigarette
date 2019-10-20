@@ -16,45 +16,47 @@
 <div class="title"><h1>E-cigarette Usage in the United States</h1></div>
     <!-- <div id="app"></div> -->
    
-    <div id="radio-container">
-        <label>Year</label>
-    <br>
-        <input id="2016" name="year" type="radio" value="year" checked="checked">
-        <label onclick="">2016</label>
-    <br>
-        <input id="2017" name="year" type="radio" value="year">
-        <label onclick="">2017</label>
-    </div>
+    
     
     <div id="info-box"></div>
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
     
-    <div class="2016-legend-container">Legend</div>
-    <ul class="legend">
-        <li><span class="low"></span>1.1 - 4.0%</li>
-        <br>
-        <li><span class="intermediate"></span>4.1 - 4.7%</li>
-        <br>
-        <li><span class="high"></span>4.8 - 5.1%</li>
-        <br>
-        <li><span class="very-high"></span> >= 5.2% </li>
-    </ul>
-
-
-    <div class="2017-legend-container">Legend</div>
-    <ul class="legend">
-        <li><span class="low"></span>1.1 - 3.9%</li>
-        <br>
-        <li><span class="intermediate"></span>4.0 - 4.6%</li>
-        <br>
-        <li><span class="high"></span>4.7 - 4.9%</li>
-        <br>
-        <li><span class="very-high"></span> >= 5.0% </li>
-    </ul>
-
-
     <div id="us-map" preserveAspectRatio="xMinYMin meet">
+        <div id="radio-container">
+            <label>Year</label>
+            <br>
+            <input id="2016" name="year" type="radio" value="year" checked="checked">
+            <label onclick="">2016</label>
+            <br>
+            <input id="2017" name="year" type="radio" value="year">
+            <label onclick="">2017</label>
+        </div>
+    <div class="legend">
+        <div id="legend-container-1">
+            <ul class="legend">
+                <li><span class="low"></span>1.1 - 4.0%</li>
+                <br>
+                <li><span class="intermediate"></span>4.1 - 4.7%</li>
+                <br>
+                <li><span class="high"></span>4.8 - 5.1%</li>
+                <br>
+                <li><span class="very-high"></span> >= 5.2% </li>
+            </ul>
+        </div>
     
+        <div id="legend-container-2">
+            <ul class="legend">
+                <li><span class="low"></span>1.1 - 3.9%</li>
+                <br>
+                <li><span class="intermediate"></span>4.0 - 4.6%</li>
+                <br>
+                <li><span class="high"></span>4.7 - 4.9%</li>
+                <br>
+                <li><span class="very-high"></span> >= 5.0% </li>
+            </ul>
+        </div>
+    </div>
         <svg xmlns="http://www.w3.org/2000/svg" width="959" height="593">
         
         <defs>
@@ -272,12 +274,14 @@
 
     </svg>
     </div>
-    <div><h2> Vaping Among the Youth (18-24)</h2></div>
+    
+    <div class="bar-title"><h2> Vaping Among the Youth in 2016 (Age 18-24)</h2></div>
+    <br>
     <script src="./dist/main.js"></script>
     <script src="./src/bar.js"></script>
     <script src="./src/bar2.js"></script>
     
-   <!-- <div class="chart"> </div> -->
+
     
 </body>
 </html>
