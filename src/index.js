@@ -139,6 +139,7 @@ age1.forEach(function(item) {
 });
 
 const bar_data = (Object.values(age_data));
+debugger
 // debugger
 console.log(bar_data)
 // debugger

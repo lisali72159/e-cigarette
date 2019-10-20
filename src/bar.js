@@ -52,13 +52,13 @@ var dataset = [
   12.7,
   11.1,
   4.8
-];
+].reverse();
 
-var svgWidth = 1000,
-  svgHeight = 500,
-  barPadding = 4;
+var svgWidth = 1425,
+  svgHeight = 600,
+  barPadding = 2;
 
-var barWidth = svgWidth / dataset.length;
+var barWidth = 26;
 
 
 var svg = d3
@@ -68,11 +68,12 @@ var svg = d3
   .attr("height", svgHeight)
   .attr("class", "bar-chart")
   .attr("fill", "steelblue")
+  // .attr("transform", "translate(50, 2)")
 
  
 var xScale = d3
     .scaleLinear()
-    .domain([0, d3.max(dataset)])
+    .domain([0, "hi"])
     .range([0, svgWidth]);
 
 var yScale = d3
@@ -80,22 +81,46 @@ var yScale = d3
   .domain([0, d3.max(dataset)])
   .range([svgHeight, 0]);
 
-  var x_axis = d3.axisBottom().scale(xScale);
+  debugger
+var x_axis = d3.axisBottom().scale(xScale);
 
-  var y_axis = d3.axisLeft().scale(yScale);
+var y_axis = d3.axisLeft().scale(yScale);
          
+  
 svg
   .append("g")
-  .attr("transform", "translate(50, 2)")
+  .attr("transform", "translate(48, -50)")
   .call(y_axis);
 
-var xAxisTranslate = svgHeight - 20;
+var xAxisTranslate = svgHeight - 50;
+var yAxisTranslate = svgWidth - 0;
 
-  svg
+svg
     .append("g")
-    .attr("transform", "translate(0, " + xAxisTranslate + ")")
-    .call(x_axis);
+    .attr("transform", "translate(48, " + xAxisTranslate + ")")    
+    .call(x_axis)
+   
          
+svg.append("text")
+  .attr("transform",
+    "translate(" + 500 + " ," +
+    (595) + ")")
+  .text("State");
+
+svg.append("text")
+  .attr("transform",
+    "translate(" + 50 + " ," +
+    (570) + ")")
+  .text("AK AL AR AZ CA CO CT DC DE FL GA GU HI IA ID IL IN KS KY LA MA MD ME MI MN MO MS MT NC ND NE NH NJ NM NV NY OH OK OR PA PR RI SC SD TN TX US UT VA VT WA WI WV WY")
+
+svg.append("text")
+  .attr("transform", "rotate(-90)")
+  .attr("y", 2)
+  .attr("x", -300)
+  .attr("dy", "1em")
+  .style("text-anchor", "middle")
+  .text("Percent (%)");  
+
 var barChart = svg
   .selectAll("rect")
   .data(dataset)
@@ -105,12 +130,12 @@ var barChart = svg
     return yScale(d) ;
   })
   .attr("height", function(d) {
-    return svgHeight - yScale(d);
+    return svgHeight - yScale(d) - 50;
   })
-  .attr("transform", "translate(10)")
+  
   .attr("width", barWidth - barPadding)
   .attr("transform", function(d, i) {
-    var translate = [barWidth * i, 0];
+    var translate = [barWidth * i + 50, ];
     return "translate(" + translate + ")";
   });
 
