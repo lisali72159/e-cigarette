@@ -12,6 +12,12 @@ html{
   margin: 30px;
 }
 
+.caption {
+  color: #5c497f;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+}
+
 #radio-container{
   display: inline-block;
   padding: 10px;
@@ -81,7 +87,7 @@ path:hover, circle:hover {
 }
 
 .bar-title{
-  color:#b28daa;
+  color:#b16ba2;
   text-align: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   position: relative;

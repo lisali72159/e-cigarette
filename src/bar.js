@@ -93,7 +93,7 @@ svg
   .call(y_axis);
 
 var xAxisTranslate = svgHeight - 50;
-var yAxisTranslate = svgWidth - 0;
+// var yAxisTranslate = svgWidth - 0;
 
 svg
     .append("g")
