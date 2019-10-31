@@ -8,8 +8,8 @@ html{
   left: 0;
   width: 100%;
   height: 100%;
-  
   margin: 30px;
+  
 }
 
 .caption {
@@ -49,6 +49,7 @@ svg {
   display: flex;
   position: relative;
   margin-left: 30%;
+  
 }
 
 path:hover, circle:hover {
@@ -85,7 +86,6 @@ path:hover, circle:hover {
 }
 
 .bar-title{
-  
   text-align: center;
   font-family: 'Libre Baskerville', serif;  position: relative;
   width: 700px;
@@ -94,7 +94,6 @@ path:hover, circle:hover {
   border-top: 1px solid #d4eee1;
   border-bottom: 1px solid #d4eee1;
   padding: 0px;
-  
 }
 
 
@@ -106,10 +105,12 @@ path:hover, circle:hover {
 .high { background-color: #014f87; }
 .very-high { background-color: #12283c; }
 
-.bar-chart {
-  margin: 40px;
-  display: flex;
+.container {
   margin: 0 auto;
 }
-
+rect {
+  fill: #99ddff;
+  
+  
+}
 

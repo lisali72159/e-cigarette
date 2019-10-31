@@ -153,7 +153,7 @@ age1.forEach(function(item) {
   }
 });
 
-const bar_data = (Object.values(age_data));
+const bar_data = (Object.values(age_data)).reverse();
 
 // debugger
 console.log(bar_data)
@@ -196,15 +196,7 @@ map.forEach(state => {
   })
 });
 
-
-
-
-
-
-
-
-
-
+//BAR GRAPH
 
 const container = d3.select(".container");
 
@@ -215,8 +207,8 @@ const margin = {
     left: 70
 };
 
-const width2 = 1000,
-    height2 = 1000;
+const width2 = 2000,
+    height2 = 3000;
 
 const tooltip = container
     .append("div")
@@ -244,13 +236,13 @@ const percentage = container
 
 // include introductory heading and paragraph
 percentage
-    .append("h2")
-    .text("Title");
+    .append("h2");
 
 // SVG
 // include the SVG and nested g element in which to plot the visualization
 const percentageSVG = percentage
     .append("svg")
+    .attr("className", "bar-graph")
     .attr("viewBox", `0 0 ${width2 + margin.left + margin.right} ${height2 + margin.top + margin.bottom}`)
     .append("g")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
@@ -296,23 +288,6 @@ percentageSVG
     .attr("id", `y-axis`)
     .call(percentageYAxis);
 
-// GRID LINES
-// include vertical grid lines with a line element for each horizontal tick
-// licensesSVG
-//     .select("g#x-axis")
-//     .selectAll("g.tick")
-//     .append("line")
-//     .attr("x1", 0)
-//     .attr("y1", 0)
-//     .attr("x2", 0)
-//     // -height as the SVG syntax reasons top to bottom
-//     .attr("y2", -height2)
-//     .style("opacity", 0.3);
-
-// FORMAT
-// include a formatting function for the number of licences (to show a comma every third digit)
-// const formatThou = d3.format(",");
-
 // HORIZONTAL BARS
 // append a rect element for each data point
 percentageSVG
@@ -333,7 +308,7 @@ percentageSVG
             .text(() => `${d.state_abbr}`);
         tooltip
             .select("p.description")
-            .text(() => `Percentage: ${d.percentage}`);
+            .text(() => `Percentage: ${d.percentage} %`);
     })
     .on("mouseout", () => tooltip.style("opacity", 0))
     // include two classes of the hunting category, to style it accordingly
@@ -342,13 +317,12 @@ percentageSVG
     .attr("x", 0)
     // vertically offset by a fourth of the band width as to center the bars (which have half the band width)
     .attr("y", (d) => percentageYScale(d.state_abbr) + percentageYScale.bandwidth()/4)
-    // while the height is dicated by half the band width, the width is transitioned to the appropriate value represented by the data value
-    .attr("height", percentageYScale.bandwidth()/2)
+    // while the height is dicated by 1.5 the band width, the width is transitioned to the appropriate value represented by the data value
+    .attr("height", percentageYScale.bandwidth()/1.5)
     .transition()
     .duration((d, i) => 2000 - 100 * i)
     .delay((d, i) => 900 + 100 * i)
     .attr("width", (d, i) => { 
-      debugger
       return (
       percentageXScale(parseInt(d.percentage)))
     });
