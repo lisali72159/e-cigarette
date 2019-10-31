@@ -157,7 +157,7 @@ const bar_data = (Object.values(age_data));
 
 // debugger
 console.log(bar_data)
-// debugger
+debugger
 
 var dataset = [];
 for (let i = 0; i < bar_data.length; i++) {
@@ -196,3 +196,162 @@ map.forEach(state => {
   })
 });
 
+
+
+
+
+
+
+
+
+
+
+const container = d3.select(".container");
+
+const margin = {
+    top: 20,
+    right: 20,
+    bottom: 20,
+    left: 70
+};
+
+const width2 = 500 - margin.left - margin.right,
+    height2 = 500 ;
+
+const bar = d3
+  .select("container")
+  .append("svg")
+  .attr("id", "graph")
+  .attr("width", width2)
+  .attr("height", height2);
+
+const tooltip = container
+    .append("div")
+    .attr("id", "tooltip")
+    .style("opacity", 0);
+
+// include in the div tooltip, two paragraphs to detail the information in two lines
+tooltip
+    .append("p")
+    .attr("class", "title");
+
+tooltip
+    .append("p")
+    .attr("class", "description");
+
+
+// HORIZONTAL BAR CHART
+// include a chart visualizing data regarding the number of licenses for different sport categories, and for hunting purposes
+// structure the data in an array of objects detailing 1. category and 1. value
+
+
+// include a section for the specific visualization
+const licenses = container
+    .append("section");
+
+// include introductory heading and paragraph
+licenses
+    .append("h2")
+    .text("Number of licenses");
+
+// SVG
+// include the SVG and nested g element in which to plot the visualization
+const licensesSVG = licenses
+    .append("svg")
+    .attr("viewBox", `0 0 ${width2 + margin.left + margin.right} ${height2 + margin.top + margin.bottom}`)
+    .append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+// SCALES
+// define scales based on the data
+
+// linear scale for the x axis, detailing the data values
+const licensesXScale = d3
+    .scaleLinear()
+    .domain([0, d3.max(bar_data, (d) => d.value)])
+    .range([0, width2]);
+
+// band scale for the y-axis, with one band for data point
+const licensesYScale = d3
+    .scaleBand()
+    .domain(bar_data.map(data => data.state_abbr))
+    .range([0, height2]);
+
+
+// AXES
+// reducing the number of horizontal ticks
+const licensesXAxis = d3
+    .axisBottom(licensesXScale)
+    .ticks(5);
+
+// removing the ticks for the vertical axis
+const licensesYAxis = d3
+    .axisLeft(licensesYScale)
+    .tickSize(0)
+    .tickPadding(5);
+
+licensesSVG
+    .append("g")
+    .attr("class", `axis`)
+    .attr("id", `x-axis`)
+    .attr("transform", `translate(0, ${height2})`)
+    .call(licensesXAxis);
+
+licensesSVG
+    .append("g")
+    .attr("class", `axis`)
+    .attr("id", `y-axis`)
+    .call(licensesYAxis);
+
+// GRID LINES
+// include vertical grid lines with a line element for each horizontal tick
+// licensesSVG
+//     .select("g#x-axis")
+//     .selectAll("g.tick")
+//     .append("line")
+//     .attr("x1", 0)
+//     .attr("y1", 0)
+//     .attr("x2", 0)
+//     // -height as the SVG syntax reasons top to bottom
+//     .attr("y2", -height2)
+//     .style("opacity", 0.3);
+
+// FORMAT
+// include a formatting function for the number of licences (to show a comma every third digit)
+// const formatThou = d3.format(",");
+
+// HORIZONTAL BARS
+// append a rect element for each data point
+licensesSVG
+    .selectAll("rect")
+    .data(bar_data)
+    .enter()
+    .append("rect")
+    // on hover show the tooltip with information regarding the category and the actual number of licenses
+    .on("mouseenter", (d, i) => {
+        tooltip
+            .style("opacity", 1)
+            // pageX and pageY allow to target where the cursor lies in a page taller than 100vh
+            // slightly offset the position of the tooltip with respect to the cursor
+            .style("left", `${d3.event.pageX + 10}px`)
+            .style("top", `${d3.event.pageY - 10}px`);
+        tooltip
+            .select("p.title")
+            .text(() => `${d.state_abbr}`);
+        tooltip
+            .select("p.description")
+            .text(() => `Percentage: ${d.percentage}`);
+    })
+    .on("mouseout", () => tooltip.style("opacity", 0))
+    // include two classes of the hunting category, to style it accordingly
+    
+    // each rectangle starts from the left and its respective band
+    .attr("x", 0)
+    // vertically offset by a fourth of the band width as to center the bars (which have half the band width)
+    .attr("y", (d) => licensesYScale(d.state_abbr) + licensesYScale.bandwidth()/4)
+    // while the height is dicated by half the band width, the width is transitioned to the appropriate value represented by the data value
+    .attr("height2", licensesYScale.bandwidth()/2)
+    .transition()
+    .duration((d, i) => 2000 - 100 * i)
+    .delay((d, i) => 900 + 100 * i)
+    .attr("width", (d, i) => licensesXScale(d.percentage));

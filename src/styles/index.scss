@@ -1,5 +1,5 @@
 html{
-  background-color: rgb(247, 243, 213);
+  background-color: rgb(73, 72, 69);
 }
 
 #us-map {
@@ -13,9 +13,10 @@ html{
 }
 
 .caption {
-  color: #5c497f;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  text-align: center;
+  color: #d4eee1;
+  display:flex;
+  justify-content: center;
+  font-family: 'Libre Baskerville', serif;
 }
 
 #radio-container{
@@ -24,20 +25,20 @@ html{
   text-align: center;
   width: 150px;
   margin: 20px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 20px;
+  font-family: 'Libre Baskerville', serif;  font-size: 20px;
   height: 100px;
   position: absolute;
   left: 20%;
+  color:#d4eee1;
   
 }
 
 .legend{
+  color:#d4eee1;
   padding: 10px;
   width: 200px;
   border-radius: 20px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 20px;
+  font-family: 'Libre Baskerville', serif;  font-size: 20px;
   display: block;
   flex-direction:column;
   position: absolute;
@@ -52,20 +53,18 @@ svg {
 }
 
 path:hover, circle:hover {
-  stroke: #f0c03d !important;
+  stroke: #a79c3e !important;
   stroke-width:2px;
   stroke-linejoin: round;
-  fill: #f0c03d !important;
+  fill: #a79c3e  !important;
 }
 
 
 .title{
-  color: #b16ba2;
+  color: #d4eee1;
   text-align: center;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  border: solid 2px #b28daa;
-  border-radius:  0px 40px 0px 40px;
-  background-color: white;
+  font-family: 'Libre Baskerville', serif;  border: solid 2px #b28daa;
+  border: none;
   margin: 0 auto;
   width: 900px;
 
@@ -77,26 +76,26 @@ path:hover, circle:hover {
   left: 0px;
   z-index: 1;
   background-color: #f9f9f9;
-  border: 2px solid black;
+  border: none;
   border-radius: 5px;
   padding: 5px;
-  font-family: arial;
+  font-family: 'Libre Baskerville', serif;  
   font-weight: bold;
   opacity: 0;
   font-size: 20px;
 }
 
 .bar-title{
-  color:#b16ba2;
+  
   text-align: center;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  position: relative;
+  font-family: 'Libre Baskerville', serif;  position: relative;
   width: 700px;
-  border: solid 4px #b28daa;
+  color: #d4eee1;
   margin: 0 auto;
-  border-radius: 0px 40px 0px 40px;
+  border-top: 1px solid #d4eee1;
+  border-bottom: 1px solid #d4eee1;
   padding: 0px;
-  background-color: white;
+  
 }
 
 
@@ -113,3 +112,5 @@ path:hover, circle:hover {
   display: flex;
   margin: 0 auto;
 }
+
+
