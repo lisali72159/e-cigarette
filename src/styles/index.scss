@@ -119,18 +119,15 @@ rect:hover{
 #x-axis  {
   stroke:#e6f1ec;
   color: white;
-  stroke-width: 1px;
-  fill: #e6f1ec;
   font-size: 15px;
   font-family: 'Libre Baskerville', serif;
 }
 
 #y-axis {
-  stroke: rgb(194, 192, 110);
-  
-  fill: #e6f1ec;
+  stroke: #e6f1ec;
+  fill:#e6f1ec;
   stroke-width: 1px;
-  font-size: 40px;
+  font-size: 30px;
   font-family: 'Libre Baskerville', serif;
 }
 
