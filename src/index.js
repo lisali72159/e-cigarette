@@ -136,13 +136,6 @@ const age1 = all_data.filter(function(item) {
 });
 
 
-const age2 = all_data.filter(function(item) {
-  return (
-    item[12] === "E-Cigarette Use (Adults)" &&
-    item[27] === "18 to 24 Years" &&
-    item[8] === "2017"
-  );
-});
 
 
 const age_data = {};
@@ -167,7 +160,7 @@ const bar_data = (Object.values(age_data)).reverse();
 
 // debugger
 console.log(bar_data)
-debugger
+// debugger
 
 var dataset = [];
 for (let i = 0; i < bar_data.length; i++) {

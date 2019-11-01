@@ -17,7 +17,7 @@ html{
   display:flex;
   justify-content: center;
   font-family: 'Libre Baskerville', serif;
-  margin: 0px;
+  padding: 0px;
 }
 
 #radio-container{
@@ -178,3 +178,25 @@ text {
   fill: #d4eee1;
 }
 
+.x-axis, .y-axis {
+  color: #d4eee1;
+  font-size: 20px;
+  padding: 0px;
+}
+
+.x-axis{
+  position:relative;
+  left: 500px;
+}
+
+h6{
+  padding: 0px;
+  margin: 0px;
+}
+
+.y-axis{
+  position: absolute;
+  transform: rotate(-90deg);
+  top: 1900px;
+  left: 100px;
+}
