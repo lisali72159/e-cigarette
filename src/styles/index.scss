@@ -28,7 +28,7 @@ html{
   font-family: 'Libre Baskerville', serif;  font-size: 20px;
   height: 100px;
   position: absolute;
-  left: 5%;
+  left: 10%;
   color:#d4eee1;
   
 }
@@ -42,13 +42,13 @@ html{
   flex-direction:column;
   position: absolute;
   top: 240px;
-  left: 5%;
+  left: 10%;
 }
 
 svg {
   display: flex;
   position: relative;
-  margin-left: 15%;
+  margin-left: 20%;
   
 }
 
@@ -158,4 +158,21 @@ rect:hover{
   padding: 0px;
   text-align: center;
   margin:0px;
+}
+
+.facts{
+  font-family: 'Libre Baskerville', serif;  
+  border: dotted 2px #d4eee1;
+  border-radius: 20px;
+  padding: 20px;
+  color:#d4eee1;
+  text-align: center;
+  width: 200px;
+  font-size: 14px;
+  margin: 0 0 20px 20px;
+
+}
+
+text {
+  fill: #d4eee1;
 }
