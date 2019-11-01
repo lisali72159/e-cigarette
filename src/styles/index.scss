@@ -17,6 +17,7 @@ html{
   display:flex;
   justify-content: center;
   font-family: 'Libre Baskerville', serif;
+  margin: 0px;
 }
 
 #radio-container{
@@ -30,7 +31,7 @@ html{
   position: absolute;
   left: 10%;
   color:#d4eee1;
-  
+
 }
 
 .legend{
@@ -67,7 +68,7 @@ path:hover, circle:hover {
   border: none;
   margin: 0 auto;
   width: 900px;
-
+  padding: 0px;
 }
 
 #info-box {
@@ -176,3 +177,4 @@ rect:hover{
 text {
   fill: #d4eee1;
 }
+

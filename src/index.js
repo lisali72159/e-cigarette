@@ -135,6 +135,16 @@ const age1 = all_data.filter(function(item) {
   );
 });
 
+
+const age2 = all_data.filter(function(item) {
+  return (
+    item[12] === "E-Cigarette Use (Adults)" &&
+    item[27] === "18 to 24 Years" &&
+    item[8] === "2017"
+  );
+});
+
+
 const age_data = {};
 age1.forEach(function(item) {
   var state_abbreviation = item[9];
