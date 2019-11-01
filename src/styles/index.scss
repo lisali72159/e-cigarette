@@ -28,7 +28,7 @@ html{
   font-family: 'Libre Baskerville', serif;  font-size: 20px;
   height: 100px;
   position: absolute;
-  left: 20%;
+  left: 5%;
   color:#d4eee1;
   
 }
@@ -42,13 +42,13 @@ html{
   flex-direction:column;
   position: absolute;
   top: 240px;
-  left: 20%;
+  left: 5%;
 }
 
 svg {
   display: flex;
   position: relative;
-  margin-left: 30%;
+  margin-left: 20%;
   
 }
 
@@ -110,7 +110,33 @@ path:hover, circle:hover {
 }
 rect {
   fill: #99ddff;
-  
-  
 }
 
+.axis {
+  color:  #99ddff;
+  font-size: 11px;
+}
+
+.description {
+  color:#d4eee1;
+  font-family: 'Libre Baskerville', serif;  
+  text-align: center;
+}
+
+#tooltip {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  width: 150px;
+  border-radius: 0 0 5px 5px;
+  background-color: white;
+  border: 2px solid black;
+  height: 40px;
+}
+
+.state, .description{
+  color: black;
+  padding: 0px;
+  text-align: center;
+  margin:0px;
+}

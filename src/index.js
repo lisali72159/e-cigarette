@@ -218,7 +218,7 @@ const tooltip = container
 // include in the div tooltip, two paragraphs to detail the information in two lines
 tooltip
     .append("p")
-    .attr("class", "title");
+    .attr("class", "state");
 
 tooltip
     .append("p")
@@ -304,7 +304,7 @@ percentageSVG
             .style("left", `${d3.event.pageX + 10}px`)
             .style("top", `${d3.event.pageY - 10}px`);
         tooltip
-            .select("p.title")
+            .select("p.state")
             .text(() => `${d.state_abbr}`);
         tooltip
             .select("p.description")
