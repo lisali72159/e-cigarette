@@ -48,7 +48,7 @@ html{
 svg {
   display: flex;
   position: relative;
-  margin-left: 20%;
+  margin-left: 15%;
   
 }
 
@@ -109,12 +109,34 @@ path:hover, circle:hover {
   margin: 0 auto;
 }
 rect {
-  fill: #99ddff;
+  fill: #55c6fe;
 }
 
-.axis {
-  color:  #99ddff;
-  font-size: 11px;
+rect:hover{
+  fill: #a79c3e;
+}
+
+#x-axis  {
+  stroke:#e6f1ec;
+  color: white;
+  stroke-width: 1px;
+  fill: #e6f1ec;
+  font-size: 15px;
+  font-family: 'Libre Baskerville', serif;
+}
+
+#y-axis {
+  stroke: rgb(194, 192, 110);
+  
+  fill: #e6f1ec;
+  stroke-width: 1px;
+  font-size: 40px;
+  font-family: 'Libre Baskerville', serif;
+}
+
+#y-axis > text {
+  fill: white;
+  stroke: white;
 }
 
 .description {
@@ -127,8 +149,8 @@ rect {
   position: absolute;
   z-index: 10;
   pointer-events: none;
-  width: 150px;
-  border-radius: 0 0 5px 5px;
+  width: 100px;
+  border-radius: 5px;
   background-color: white;
   border: 2px solid black;
   height: 40px;

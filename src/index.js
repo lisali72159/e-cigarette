@@ -267,7 +267,7 @@ const percentageYScale = d3
 // reducing the number of horizontal ticks
 const percentageXAxis = d3
     .axisBottom(percentageXScale)
-    .ticks(5);
+    .ticks(10);
 
 // removing the ticks for the vertical axis
 const percentageYAxis = d3
@@ -277,14 +277,14 @@ const percentageYAxis = d3
 
 percentageSVG
     .append("g")
-    .attr("class", `axis`)
+    .attr("className", `axis`)
     .attr("id", `x-axis`)
     .attr("transform", `translate(0, ${height2})`)
     .call(percentageXAxis);
 
 percentageSVG
     .append("g")
-    .attr("class", `axis`)
+    .attr("className", `axis`)
     .attr("id", `y-axis`)
     .call(percentageYAxis);
 
@@ -308,7 +308,7 @@ percentageSVG
             .text(() => `${d.state_abbr}`);
         tooltip
             .select("p.description")
-            .text(() => `Percentage: ${d.percentage} %`);
+            .text(() => `${d.percentage}%`);
     })
     .on("mouseout", () => tooltip.style("opacity", 0))
     // include two classes of the hunting category, to style it accordingly
