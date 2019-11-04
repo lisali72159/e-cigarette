@@ -93,8 +93,10 @@ document.getElementById('app');
   document.getElementsByClassName("2016")[0].addEventListener("click", () => {
     document.getElementById("legend-container-1").style.opacity = 1;
     document.getElementById("legend-container-2").style.opacity = 0;
-
+    findYear("2016")
   })
+
+  
   });
 
 
@@ -126,6 +128,18 @@ filtered.forEach(function(item) {
 });
 
 console.log(ecig_data);
+
+let findYear = (year) => {
+  all_data.filter(function(item) {
+    return (
+      item[12] === "E-Cigarette Use (Adults)" &&
+      item[27] === "18 to 24 Years" &&
+      item[8] === year
+    );
+    }
+  )}
+
+  
 
 const age1 = all_data.filter(function(item) {
   return (
