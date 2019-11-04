@@ -119,6 +119,7 @@ rect:hover{
 
 #x-axis  {
   stroke:#e6f1ec;
+  margin: 40%;
   color: white;
   font-size: 15px;
   font-family: 'Libre Baskerville', serif;
@@ -186,9 +187,15 @@ text {
 
 .x-axis{
   position:relative;
-  left: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  left: 0;
+  right: 0;
 }
 
+.x-axis > h5 {
+  text-align: center;
+}
 h6{
   padding: 0px;
   margin: 0px;
@@ -198,7 +205,7 @@ h6{
   position: absolute;
   transform: rotate(-90deg);
   top: 1900px;
-  left: 180px;
+  left: 95px;
 }
 
 button {
