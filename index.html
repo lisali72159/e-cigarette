@@ -11,27 +11,42 @@
     <link rel="stylesheet" type="text/css" href="./dist/main.css">
     </link>
     <title>Tobacco Usage</title>
+    <link rel="shortcut icon" type="image/png" href="/icons8-ios-50.png" />
+    <script src="https://kit.fontawesome.com/936d68e809.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
 <div class="title"><h1>E-cigarette Usage in the United States</h1></div>
     <div class="caption"><h3> Choose a year and hover over a state to reveal the overall percentage of adult e-cigarette users</h3></div>
-   
-    
-    
+    <div class="link-buttons">
+        <button><i class="fab fa-github"></i></button>
+        <br>
+        <button><i class="fab fa-linkedin-in"></i></button>
+        <br>
+        <button><i class="fab fa-angellist"></i></button>
+        <br>
+    </div>
     <div id="info-box"></div>
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
     
     <div id="us-map" preserveAspectRatio="xMinYMin meet">
-        <div id="radio-container">
+        <!-- <div id="radio-container">
             <label>Year</label>
             <br>
             <input id="2016" name="year" type="radio" value="year" checked="checked">
             <label onclick="">2016</label>
             <br>
+       
             <input id="2017" name="year" type="radio" value="year">
             <label onclick="">2017</label>
+        </div> -->
+        <div class="toggle">
+            <input class="2016" type="radio" name="sizeBy" value="weight" id="sizeWeight" checked="checked" />
+            <label for="sizeWeight" onclick="">2016</label>
+            <input class="2017" type="radio" name="sizeBy" value="dimensions" id="sizeDimensions" />
+            <label for="sizeDimensions" onclick="">2017</label>
         </div>
         <br>
     <div class="legend">

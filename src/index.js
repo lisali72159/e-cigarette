@@ -38,7 +38,7 @@ document.getElementById('app');
     }
   });
 
-    document.getElementById("2016").addEventListener("click", () => {
+    document.getElementsByClassName("2016")[0].addEventListener("click", () => {
       year = 2016;
       var state = d3.selectAll("path").attr("fill", function(d) {
         // debugger
@@ -61,7 +61,7 @@ document.getElementById('app');
       })
     });
    
-    document.getElementById("2017").addEventListener("click", () => {
+    document.getElementsByClassName("2017")[0].addEventListener("click", () => {
       year = 2017; 
       var state = d3.selectAll("path").attr("fill", function(d) {
         // debugger
@@ -84,13 +84,13 @@ document.getElementById('app');
       });
     })
 
-  document.getElementById("2017").addEventListener("click", () => {
+  document.getElementsByClassName("2017")[0].addEventListener("click", () => {
     document.getElementById("legend-container-2").style.opacity = 1;
     document.getElementById("legend-container-1").style.opacity = 0;
 
   })
 
-  document.getElementById("2016").addEventListener("click", () => {
+  document.getElementsByClassName("2016")[0].addEventListener("click", () => {
     document.getElementById("legend-container-1").style.opacity = 1;
     document.getElementById("legend-container-2").style.opacity = 0;
 
