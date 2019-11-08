@@ -15,11 +15,17 @@ html{
 .caption {
   color: #d4eee1;
   display:flex;
-  justify-content: center;
+  flex-direction: column;
+  align-content: center;
   font-family: 'Libre Baskerville', serif;
   padding: 0px;
+  margin: 0;
+  text-align: center;
 }
 
+.caption > h3, h4 {
+  margin: 0;
+}
 #radio-container{
   display: block;
   padding: 10px;
