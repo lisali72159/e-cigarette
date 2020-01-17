@@ -101,8 +101,6 @@ document.getElementById('app');
 
 
 
-// Append empty placeholder g element to the SVG
-// g will contain geometry elements
 var g = svg.append("g");
 
 const all_data = tobacco_data1.data;
@@ -172,10 +170,6 @@ age1.forEach(function(item) {
 
 const bar_data = (Object.values(age_data)).reverse();
 
-// debugger
-console.log(bar_data)
-// debugger
-
 var dataset = [];
 for (let i = 0; i < bar_data.length; i++) {
   dataset.push(Number(bar_data[i].percentage))
@@ -185,7 +179,7 @@ console.log(dataset);
 
 const all_states = document.getElementsByClassName("state");
 const map = Object.values(all_states[0].children);
-// debugger
+
 document.onmousemove = event => {
   document.getElementById("info-box").style.left = event.pageX + 10 + "px";
   document.getElementById("info-box").style.top = event.pageY - 35 + "px";
@@ -193,15 +187,15 @@ document.onmousemove = event => {
 
 map.forEach(state => {
   state.addEventListener("mouseover", e => {
-  // debugger
+  
   const id = e.currentTarget.id;
   const state = e.currentTarget.getElementsByTagName("title")[0].innerHTML;
   const percent = ecig_data[id][year]["percentage"] + "%";
-  // debugger
+ 
   const domEle = document.getElementById("info-box");
   domEle.innerHTML = state + ": " + percent;
   domEle.style.opacity = 1;
-  // debugger
+  
   }
 )});
 
